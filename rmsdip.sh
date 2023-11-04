@@ -15,7 +15,7 @@ sudo systemctl daemon-reload
 sudo sed -i '/SDIPC/d' /etc/rc.local
 
 # Remove the SDIPC files and the download directory
-rm -r "$DOWNLOAD_DIR"
+sudo rm -r "$DOWNLOAD_DIR"
 
 # Inform user about completion
 echo "SDIP service and related files, including the download directory, have been removed."
