@@ -1,11 +1,14 @@
 #!/bin/bash
 
+# Directory where the files will be saved
+DOWNLOAD_DIR="/home/SDIP"
+
+# Create the download directory if it doesn't exist
+mkdir -p "$DOWNLOAD_DIR"
+
 # URLs for downloading the SDIPC executable and configuration file
 SDIPC_EXECUTABLE_URL="https://raw.githubusercontent.com/mrb4haa/sdip-pkgs/main/SDIPC/SDIPC"
 SDIPC_CONFIG_URL="https://raw.githubusercontent.com/mrb4haa/sdip-pkgs/main/Projects/Project1/SDIPC.ini"
-
-# Directory where the files will be saved
-DOWNLOAD_DIR="/home/SDIP"
 
 # Set execute permissions on SDIPC executable and configuration file
 wget -q --output-document="$DOWNLOAD_DIR/SDIPC" "$SDIPC_EXECUTABLE_URL"
