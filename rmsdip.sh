@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Directory to delete
+DOWNLOAD_DIR="/home/SDIP"
+
 # Stop the systemd service
 sudo systemctl stop sdip
 
@@ -11,13 +14,11 @@ sudo systemctl daemon-reload
 # Remove the command from /etc/rc.local
 sudo sed -i '/SDIPC/d' /etc/rc.local
 
-# Remove the SDIPC files
-DOWNLOAD_DIR="/home/SDIP"
-rm "$DOWNLOAD_DIR/SDIPC"
-rm "$DOWNLOAD_DIR/SDIPC.ini"
+# Remove the SDIPC files and the download directory
+rm -r "$DOWNLOAD_DIR"
 
 # Inform user about completion
-echo "SDIP service and related files have been removed."
+echo "SDIP service and related files, including the download directory, have been removed."
 
 # You may need to reboot for all changes to take full effect
 echo "Please reboot your system if required."
